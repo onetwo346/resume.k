@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kofi Fosu's Resume</title>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+      }
+      /* Video background style */
+      .video-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        background-color: #000;
+      }
+      /* Mute/Unmute button */
+      .mute-btn {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 10; /* Ensure button is on top */
+        font-size: 16px;
+      }
+      .mute-btn:focus {
+        outline: none;
+      }
+      /* Container for the resume content */
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        z-index: 5; /* Ensure content is above video */
+        position: relative;
+      }
+      h1,
+      h2 {
+        color: #2c3e50;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .skills {
+        list-style-type: none;
+        padding: 0;
+      }
+      .skills li {
+        background-color: #ecf0f1;
+        padding: 10px;
+        margin: 5px 0;
+        border-radius: 5px;
+      }
+      .contact-info {
+        font-size: 1.1em;
+      }
+      /* Ensure videos are hidden on unsupported browsers */
+      @supports not (object-fit: cover) {
+        .video-bg {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Video background -->
+    <video
+      class="video-bg"
+      autoplay
+      muted
+      loop
+      id="backgroundVideo"
+      playsinline
+    >
+      <source src="theme.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Mute/Unmute Button -->
+    <button class="mute-btn" id="muteBtn" onclick="toggleMute()">
+      Unmute Audio
+    </button>
+
+    <div class="container">
+      <h1>Kofi Fosu</h1>
+      <p><strong>Date of Birth:</strong> April 12th</p>
+      <p><strong>Gender:</strong> Male</p>
+
+      <div class="section">
+        <h2>About Me</h2>
+        <p>
+          Hello! My name is Kofi Fosu, and I am passionate about technology and
+          its limitless possibilities. Born on the 12th of April, well I have
+          always had a natural curiosity for how things work, especially in the
+          digital world. With a strong interest in computers, I’ve built a solid
+          foundation in various aspects of technology. From developing basic
+          websites to creating simple yet captivating video games, I have
+          enjoyed working on projects that allow me to express creativity while
+          continuously improving my technical skills.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2>Skills</h2>
+        <p>I possess a growing set of skills, which include:</p>
+        <ul class="skills">
+          <li>Basic Web Development</li>
+          <li>Application Development</li>
+          <li>Simple Video Game Development</li>
+          <li>Problem-Solving in Tech</li>
+          <li>Basic Computer Literacy</li>
+          <li>Machine Learning Skill</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Contact Information</h2>
+        <p class="contact-info">
+          You can reach me via email at
+          <a href="mailto:lightwhite207@gmail.com">lightwhite207@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Mute/Unmute video function
+      function toggleMute() {
+        var video = document.getElementById("backgroundVideo");
+        var muteBtn = document.getElementById("muteBtn");
+
+        if (video.muted) {
+          video.muted = false;
+          muteBtn.innerHTML = "Mute Audio";
+        } else {
+          video.muted = true;
+          muteBtn.innerHTML = "Unmute Audio";
+        }
+      }
+    </script>
+  </body>
+</html>
